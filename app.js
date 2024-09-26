@@ -9,7 +9,10 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors({ origin: ['http://localhost:3000', 'https://macom.vercel.app/']  })); // Tambahkan CORS middleware
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://macom.vercel.app']
+}));
+// Tambahkan CORS middleware
 app.use(bodyParser.json());
 app.use(ApiKey);
 app.use('/api/manga', mangaRouter);
